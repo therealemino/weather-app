@@ -2,6 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 require('dotenv').config();
 
 export default {
+  target: 'static',  
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - weather-app',
@@ -22,7 +23,7 @@ export default {
     base: '/weather-app/'
   },
 
-  target: 'static',
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [

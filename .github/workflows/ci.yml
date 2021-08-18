@@ -1,24 +1,47 @@
-name: Deploy to github pages
+name: ci
+
 on:
   push:
     branches:
       - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
 jobs:
-  gh-pages-deploy:
-    name: Deploying to gh-pages
-    runs-on: ubuntu-latest
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
     steps:
-      - name: Setup Node.js for use with actions
-        uses: actions/setup-node@v1.1.0
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.5
         with:
-          version: 12.x
-      - name: Checkout branch
-        uses: actions/checkout@v2
+          node-version: ${{ matrix.node }}
+          check-latest: true
 
-      - name: Clean install dependencies
-        run: npm ci
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2.1.4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: Run deploy script
-        run: |
-          git config user.name "therealemino" && git config user.email "ejeiokekeemmanuel@gmail.com"
-          npm run deploy:gh-pages
+      - name: Install dependencies 👨🏻‍💻
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Run linter 👀
+        run: npm run lint
+
+      - name: Run tests 🧪
+        run: npm run test
