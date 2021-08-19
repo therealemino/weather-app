@@ -6,7 +6,7 @@
         <v-row>
           <v-col cols="12" md="5" data-aos="fade-right">
             <Chart :chart-data="chartData" :options="options"/>
-          </v-col>
+          </v-col>      
           <v-col cols="12" md="7" data-aos="fade-left" data-aos-duration="2000">
             <v-row class="overflow-x-auto dashboard pt-7" dense>
               <v-col v-for="item in items" :key="items.indexOf(item)" cols="4" sm="3" md="2">
