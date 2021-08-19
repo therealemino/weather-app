@@ -1,4 +1,8 @@
-# weather-app
+# Simple Weather-app
+
+Built with Nuxt.js, Openweathermap (API), Vuetify (style) and Chart.js (data-visualisation)
+
+Deployed to https://emino-weather-app.surge.sh/
 
 ## Build Setup
 
