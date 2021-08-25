@@ -38,23 +38,23 @@ export const mutations = {
 export const actions = {
   getWeatherData({commit}, city) {
     // console.log(city);
-    this.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.apiKey}`)
+    this.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${process.env.API_KEY}`)
     .then(res => commit("setWeatherData", res))
   },
   getForecastData({commit}, city) {
     // console.log(city);
-    this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${process.env.apiKey}`)
+    this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${process.env.API_KEY}`)
     .then(res => commit("setForecastData", res))
   },
   getLocation({commit}, locationInfo) {
     // console.log(locationInfo);
-    this.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?lat=${locationInfo.latitude}&lon=${locationInfo.longitude}&units=metric&appid=${process.env.apiKey}`)
+    this.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?lat=${locationInfo.latitude}&lon=${locationInfo.longitude}&units=metric&appid=${process.env.API_KEY}`)
     .then(res => commit("setWeatherData", res))  
     this.$router.push('/')  
   },
   getLocationForecast({commit}, locationInfo) {
     // console.log(locationInfo);
-    this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?lat=${locationInfo.latitude}&lon=${locationInfo.longitude}&units=metric&appid=${process.env.apiKey}`)
+    this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?lat=${locationInfo.latitude}&lon=${locationInfo.longitude}&units=metric&appid=${process.env.API_KEY}`)
     .then(res => commit("setForecastData", res))    
   },
 
