@@ -1,11 +1,17 @@
 import data from "~/assets/ng.json"
+const cityArray = []
+
+// arrange cities in alphabetical order
+for (let i = 0; i < data.length; i++) {
+  cityArray.push(data[i].city)
+}
 
 const date = new Date()
 
 export const state = () => ({
     city: null,
     weatherData: null,
-    cities: data,
+    cities: cityArray.sort(),
     loc: null,
     time: {
       hour: date.getHours(),

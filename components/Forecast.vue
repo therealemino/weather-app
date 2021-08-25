@@ -97,4 +97,10 @@ div#card-temp {
   font-weight: 700
 }
 
+@media screen and (min-width: 960px) {
+  .dashboard .text-subtitle-2.small-text {
+    font-size: 0.75em !important;
+  }    
+}
+
 </style>

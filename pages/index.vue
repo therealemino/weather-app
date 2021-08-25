@@ -23,7 +23,7 @@ export default {
 
   head() {
     return {
-      title: 'Weather App - Made by Emino',
+      title: 'Weather App - Made by Ejei-Okeke Emmanuel',
       meta: [
         {
           hid: 'description',

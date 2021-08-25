@@ -14,7 +14,7 @@
 export default {
  data () {
     return {
-      title: 'About - Simple weather app',
+      title: 'About - Simple weather app. Created by Ejei-Okeke Emmanuel',
     }
   },    
 }

@@ -3,10 +3,10 @@
     <v-form>
       <v-container>
             <div>
-              <v-select v-model="city" :items="cities" item-text="city" item-value="city"  label="Select City" outlined></v-select>
+              <v-select v-model="city" :items="cities" item-text="city" item-value="city"  label="Select City" class="text-lg-h6" outlined></v-select>
               <v-row class="d-flex align-center">
                 <v-col cols="9">
-                  <v-text-field v-model="city" label="Or Enter City Name" outlined></v-text-field>
+                  <v-text-field v-model="city" label="Or Enter City Name" class="text-lg-h6" outlined></v-text-field>
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col cols="3" class="px-2 mb-8 d-flex justify-center">
@@ -82,6 +82,10 @@ const date = new Date()
 <style scoped>
 #search-button {
   height: 48px;
+}
+
+@media screen and (min-width: 960px) {
+    
 }
 
 
