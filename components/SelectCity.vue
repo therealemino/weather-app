@@ -1,12 +1,14 @@
 <template>
-  <div>
+  <div class="form">
     <v-form>
       <v-container>
             <div>
-              <v-select v-model="city" :items="cities" item-text="city" item-value="city"  label="Select City" class="text-lg-h6" outlined></v-select>
               <v-row class="d-flex align-center">
-                <v-col cols="9">
-                  <v-text-field v-model="city" label="Or Enter City Name" class="text-lg-h6" outlined></v-text-field>
+                <v-col cols="12" md="4">
+                  <v-select v-model="city" :items="cities" item-text="city" item-value="city"  label="Select City (Nigeria)" class="text-lg select" outlined></v-select>
+                </v-col>
+                <v-col cols="9" md="5">
+                  <v-text-field v-model="city" label="Or Enter City Name" class="text-lg" outlined></v-text-field>
                 </v-col>
                 <v-spacer></v-spacer>
                 <v-col cols="3" class="px-2 mb-8 d-flex justify-center">
@@ -80,6 +82,9 @@ const date = new Date()
 </script>
 
 <style scoped>
+.form {
+  font-family: "Nunito";
+}
 #search-button {
   height: 48px;
 }

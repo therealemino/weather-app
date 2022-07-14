@@ -6,8 +6,8 @@
       tile
     >
       <v-toolbar class="navbar">
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        <v-toolbar-title>
+        <v-icon>mdi-weather-partly-lightning</v-icon>
+        <v-toolbar-title class="ml-2">
           <nuxt-link id="title" to="/">Weather</nuxt-link> 
         </v-toolbar-title>
 
@@ -66,14 +66,14 @@ export default {
     text-decoration: none;
     color: #fff;
     font-weight: 800;
+    font-family: "Inter";
   }
   .navbar {
     text-transform: uppercase;
   }
   .nav-link {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     text-decoration: none;
     padding: 0.25vw;
-    color: #61122f;
   }
 </style>

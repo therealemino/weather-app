@@ -51,6 +51,8 @@ export default {
         Roboto: true,
         'Josefin+Sans': true,
         Montserrat: true,
+        Inter: true,
+        Nunito: true,
         Lato: [100, 300],
         Raleway: {
           wght: [100, 400],
@@ -70,7 +72,18 @@ export default {
 
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: 'en',
+      name: 'Emino\'s Weather App',
+      short_name: 'Weather',
+      theme_color: '#000',
+      background_color: '#000',
+    },
+    meta: {
+      theme_color: '#000',
+    },
+    icon: {
+      source: '~/static/icon.png',
+      sizes: [64, 120, 144, 152, 192, 384, 512]
     }
   },
 

@@ -3,11 +3,8 @@
     <v-container>
       <div v-if="forecastData !== null" >
         <div class="main">3-day Forecast (3-hr interval)</div>
-        <v-row>
-          <v-col cols="12" md="5" data-aos="fade-right">
-            <Chart :chart-data="chartData" :options="options"/>
-          </v-col>      
-          <v-col cols="12" md="7" data-aos="fade-left" data-aos-duration="2000">
+        <v-row>     
+          <v-col cols="12" data-aos="fade-left" data-aos-duration="2000">
             <v-row class="overflow-x-auto dashboard pt-7" dense>
               <v-col v-for="item in items" :key="items.indexOf(item)" cols="4" sm="3" md="2">
                 <v-card class="px-2 py-2 text-subtitle-2 small-text">
@@ -26,11 +23,9 @@
 </template>
 
 <script>
-import Chart from "./Chart.vue"
 import aosMixin from "~/mixins/aos"
 
 export default {
-  components: {Chart},
   mixins: [aosMixin],
   computed: {
     forecastData() {
@@ -90,6 +85,7 @@ export default {
 
 .main {
   text-align: center;
+  font-family: "Nunito";
 }
 
 div#card-temp {

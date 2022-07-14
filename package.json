@@ -1,5 +1,6 @@
 {
   "name": "weather-app",
+  "description": "Simple Weather PWA",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -23,12 +24,11 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/pwa": "^3.3.5",
     "aos": "^2.3.4",
-    "chart.js": "^2.9.4",
+    "chart.js": "2.9.4",
+    "vue-chartjs": "3.5.1",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
-    "vue-chartjs": "^3.5.1",
-    "vuetify": "^2.5.5",
-    "vuex": "^3.6.2"
+    "vuetify": "^2.5.5"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",

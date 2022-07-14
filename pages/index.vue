@@ -34,17 +34,25 @@ export default {
     }
   },
 
+  computed: {
+    city() {
+      return this.$route.params.city
+    }
+  },
+
   created() {
-    this.$axios
-      .$get(
-        `https://api.openweathermap.org/data/2.5/weather?q=Lagos&units=metric&appid=${process.env.API_KEY}`
-      )
-      .then((res) => this.$store.commit('setWeatherData', res))
-    this.$axios
-      .$get(
-        `https://api.openweathermap.org/data/2.5/forecast?q=Lagos&units=metric&appid=${process.env.API_KEY}`
-      )
-      .then((res) => this.$store.commit('setForecastData', res))
+    if(!this.city) {
+      this.$axios
+        .$get(
+          `https://api.openweathermap.org/data/2.5/weather?q=Lagos&units=metric&appid=${process.env.API_KEY}`
+        )
+        .then((res) => this.$store.commit('setWeatherData', res))
+      this.$axios
+        .$get(
+          `https://api.openweathermap.org/data/2.5/forecast?q=Lagos&units=metric&appid=${process.env.API_KEY}`
+        )
+        .then((res) => this.$store.commit('setForecastData', res))
+    }
   },
 }
 </script>

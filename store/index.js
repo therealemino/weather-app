@@ -56,12 +56,16 @@ export const actions = {
     // console.log(locationInfo);
     this.$axios.$get(`https://api.openweathermap.org/data/2.5/weather?lat=${locationInfo.latitude}&lon=${locationInfo.longitude}&units=metric&appid=${process.env.API_KEY}`)
     .then(res => commit("setWeatherData", res))  
-    this.$router.push('/')  
+    this.$router.push({
+      name: 'index',
+      params: {
+        city: true
+      }
+    })
   },
   getLocationForecast({commit}, locationInfo) {
     // console.log(locationInfo);
     this.$axios.$get(`https://api.openweathermap.org/data/2.5/forecast?lat=${locationInfo.latitude}&lon=${locationInfo.longitude}&units=metric&appid=${process.env.API_KEY}`)
     .then(res => commit("setForecastData", res))    
   },
-
 }
