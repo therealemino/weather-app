@@ -44,7 +44,7 @@ export default {
             icons: [
                 {
                     name: "globe",
-                    link: "https://ejeiokekeemmanuel.vercel.app",
+                    link: "https://ejeiokekeemmanuel.dev",
                     prefix: "fas"
                 },
                 {
